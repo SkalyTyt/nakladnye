@@ -1,0 +1,5 @@
+samples/
+tests/make-merge-samples.js
+node_modules/
+.DS_Store
+Thumbs.db
