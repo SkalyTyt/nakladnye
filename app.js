@@ -297,10 +297,10 @@
         <td class="idx">${i + 1}</td>
         <td class="name">${esc(it.name)}${it.src === 'fuzzy' ? `<small>≈ ${esc(it.match.name)}</small>` : it.code ? `<small>Код ${esc(it.code)}${it.unit ? ' · ' + esc(it.unit) : ''}</small>` : ''}</td>
         <td><input class="bc-input ${!it.barcode ? 'missing' : it.src === 'fuzzy' ? 'fuzzy' : ''}" data-bc="${i}" value="${esc(it.barcode)}" placeholder="Введите" inputmode="numeric"></td>
-        <td class="n">${fmtNum(it.qty)}</td>
-        <td class="n">${fmtMoney(it.price)}</td>
-        <td class="n">${fmtMoney(it.sum)}</td>
-        <td>${statusBadge(it, i)}</td>
+        <td class="n" data-l="Кол-во">${fmtNum(it.qty)}</td>
+        <td class="n" data-l="Цена">${fmtMoney(it.price)}</td>
+        <td class="n" data-l="Сумма">${fmtMoney(it.sum)}</td>
+        <td class="st">${statusBadge(it, i)}</td>
       </tr>`).join('')}</tbody></table>`;
   }
 

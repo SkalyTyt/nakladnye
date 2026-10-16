@@ -221,6 +221,23 @@ select:focus, .inp:focus { outline: 2px solid var(--accent-line); border-color: 
   .brand span { display: none; }
   .table-wrap, .raw-wrap { max-height: none; }
 }
+/* телефон: строки таблицы карточками */
+@media (max-width: 700px) {
+  .table-wrap table, .table-wrap tbody { display: block; }
+  .table-wrap thead { display: none; }
+  .table-wrap tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 10px; padding: 12px 14px; border-bottom: 1px solid var(--line-2); align-items: center; }
+  .table-wrap td { border: 0; padding: 0; background: none !important; }
+  .table-wrap td.idx { display: none; }
+  .table-wrap td.name { grid-column: 1 / -1; min-width: 0; font-weight: 600; }
+  .table-wrap td:nth-child(3) { grid-column: span 2; order: 1; }
+  .table-wrap td.st { order: 2; justify-self: end; }
+  .table-wrap td.n { order: 3; text-align: left; }
+  .table-wrap td.n::before { content: attr(data-l); display: block; color: var(--muted); font-size: 11.5px; }
+  .bc-input { width: 100%; }
+  .toolbar { padding: 10px; }
+  .search { max-width: none; flex-basis: 100%; }
+  .doc-head .f input { min-width: 0; width: 100%; }
+}
 </style>
 </head>
 <body>
